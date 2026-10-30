@@ -29,7 +29,7 @@
 
 <h2>2. The short version</h2>
 <div class="box">
-  <p>There are no accounts and no sign-in. I do not run a server that receives your personal information, and the app does not send me your data. What the app keeps stays on your own PC. Three outside parties are involved: <strong>Overwolf</strong> (the platform the app runs on, which shows ads and counts anonymous usage), <strong>Warframe Market</strong> (prices) and <strong>Warframe's public world state feed</strong> (timers and events).</p>
+  <p>The app has no accounts of its own. The only sign-in is optional: you can sign in to your own Warframe Market account to list items for sale (section 4). I do not run a server that receives your personal information, and the app does not send me your data. What the app keeps stays on your own PC. Three outside parties are involved: <strong>Overwolf</strong> (the platform the app runs on, which shows ads and counts anonymous usage), <strong>Warframe Market</strong> (prices) and <strong>Warframe's public world state feed</strong> (timers and events).</p>
 </div>
 
 <h2>3. What stays on your PC</h2>
@@ -48,7 +48,9 @@
 <h2>5. Network requests the app makes</h2>
 <p>To work, the app contacts these services. They can see your IP address and the request itself, as with any website you visit:</p>
 <ul>
-  <li><strong>Warframe Market</strong> (api.warframe.market, and item pictures from warframe.market): item lists, prices and price history for the items you look at. No account details are sent. The app identifies itself as "MilkVoiceWFTools".</li>
+  <li><strong>Warframe Market</strong> (api.warframe.market, and item pictures from warframe.market): item lists, prices and price history for the items you look at, for a list of busy items shown on the Trends page (about 120 items, plus the items on your watchlist), and, when you use the value filters or open Relics in your Inventory, recent prices for the items in your relics and in the Inventory category you are looking at. Mod card pictures shown in the Inventory are loaded from warframe.market. The app saves the price history it received on your PC and refreshes it after 12 hours. No account details are sent unless you choose to sign in to Warframe Market (below). The app identifies itself as "MilkVoiceWFTools".</li>
+  <li><strong>Your Warframe Market account (optional).</strong> If you sign in (in Settings, or from the window that opens when you click an item in your Inventory), the app sends your Warframe Market email and password to Warframe Market, once, to sign you in. Your password is never stored, logged or shown again. Warframe Market returns a sign-in token; the app keeps that token on your PC, encrypted with Windows' own protection for the signed-in user, until you press Sign out (if encryption is not available it is kept only until you close the app). With it the app, only when you press the List for sale button, creates a sell listing on your account for the item, price and quantity you chose, and later reads your own listings to mark items you already list and to remove a listing when you press Undo. It never lists, changes or removes anything on its own. Warframe Market's own terms and privacy policy apply to your account and your listings.</li>
+  <li><strong>GitHub</strong> (raw.githubusercontent.com, the WFCD/warframe-items project): the Inventory's item pictures. The first time a picture of an item you own is shown, the app downloads it from GitHub and then keeps it on your PC, so each picture is downloaded once. GitHub can see your IP address and which picture files are requested, which tells it roughly which kinds of items you own; no account details are sent.</li>
   <li><strong>Warframe's public world state feed</strong> (api.warframe.com): the timers and events shown in the World panel and used by the checklist.</li>
   <li><strong>Overwolf</strong>: downloads of its game-data packages, ads and usage statistics, described next.</li>
 </ul>
@@ -61,6 +63,7 @@
 <ul>
   <li><strong>Music widget:</strong> the app reads what your media player (for example Spotify) is playing from Windows, and can send play, pause, skip and volume commands. This happens on your PC and nothing is sent anywhere.</li>
   <li><strong>Clipboard:</strong> the app copies text (such as a trade whisper or a support report) only when you press a copy button.</li>
+  <li><strong>Picture cache:</strong> the item pictures downloaded for your Inventory are kept in a folder called item-icons inside the app's data folder, so each is downloaded once. You can delete that folder at any time; the pictures are downloaded again when needed.</li>
   <li><strong>Notifications:</strong> price alerts and world alerts can show Windows notifications.</li>
   <li><strong>Support report:</strong> the Support page can copy a short report (app and system versions, recent errors). Your Windows user name and folders are removed from it. The app does not send it anywhere: you choose whether to send it to me.</li>
 </ul>
